@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #4D4C59;
+    --purple: #6C63FF;
+    --light-grey: #C8C8C8;
+    --text-color: #9C9AB6;
+
+    font-size: 62.5%;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+body main {
+    width: min(50rem, 100%);
+
+    margin-top: 8rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+body > img {
+    position: fixed;
+    z-index: -1;
+    top: 0rem;
+    right: 0rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    margin-top: 5rem;
+    margin-bottom: 1.9rem;
+
+    color: var(--purple);
+}
+
+.counter .time {
+    display: flex;
+    justify-content: space-around;
+
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    
+    color: var(--text-color);
+}
+
+.counter .time span:nth-child(1) {
+    padding-left: 3rem;
+}
+
+.counter .time span:nth-child(2) {
+    padding-left: 3rem;
+}
+
+.counter .time span:nth-child(3) {
+    padding-left: 1rem;
+}
+
+.counter .datetime {
+    display: flex;
+    justify-content: space-around;
+    padding-inline: 1.5rem;
+
+    margin-top: -1rem;
+
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 10.8rem;
+
+    color: var(--black);
+}
+
+body main p {
+    color: var(--text-color);
+    margin-block: 1.5rem;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #FFFFFF;
+
+    display: inline-block;
+    width: 16rem;
+    height: 4.6rem;
+
+    margin-block: 3rem;
+
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--purple);
+
+    cursor: pointer;
+
+    transition: filter 0.2s;
+}
+
+button:hover {
+    filter: contrast(2);
+}
+
+body main #main-image {
+    margin-block: 2rem;
+}
+
+body #foot {
+    width: 100%;
+
+    position: fixed;
+    z-index: -1;
+    bottom: 0rem;
+    left: 0rem;
+}
+
+.modal-wrapper.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-wrapper {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    margin: 40% auto;
+    padding: 2rem;
+    border: none;
+    border-radius: 2.0rem;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content form label {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    margin-right: 13rem;
+    margin-top: 3rem;
+
+    color: var(--black);
+}
+
+.modal-content form .input-name,
+.modal-content form .input-email {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+
+    padding: 1rem;
+
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    border: 2px solid #F2F2F2;
+    background-color: #F2F2F2;
+
+    color: var(--black);
+    outline: none;
+
+    transition: border-color 0.3s ease;
+}
+
+.modal-content form .input-name:focus, 
+.modal-content form .input-email:focus {
+    border-color: #6C63FF;
+    transition-delay: 0.1s;
+}
+
+/*--- RESPONSIVE ---*/
+@media (min-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+        
+    body {
+        overflow: auto;
+        text-align: center;
+
+        
+        overflow: hidden;
+    }
+
+    body main {
+        margin-block: 10rem;
+        margin-inline: auto;
+        width: 100vw;
+    }
+
+    img {
+        width: 100vw;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'A B';
+    }
+
+    #container .col-a {
+        grid-area: A;
+    }
+
+    #container .col-b {
+        grid-area: B;
+    }
+
+    body > img {
+        position: fixed;
+        z-index: -1;
+        top: -3rem;
+        right: 0rem;
+    }
+
+    body #foot {
+        position: fixed;
+        z-index: -1;
+        bottom: -8rem;
+        left: 0rem;
+    }
+
+    main h1 {
+        font-weight: 700;
+        font-size: 3.6rem;
+        line-height: 5.4rem;
+        letter-spacing: 0.105rem;
+    }
+
+    main .counter {
+        width: 49.4rem;
+        margin-inline: auto;
+    }
+
+    main .counter .time {
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        text-transform: capitalize;
+    }
+
+    main .counter .datetime {
+        color: var(--black);
+    }
+
+    main #main-image {
+        padding-top: 2rem;
+
+        width: 60.7rem;
+        height: 43.5rem;
+    }
+
+    
+    /*----- MODAL -----*/
+    .modal-wrapper.invisible {
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .modal-wrapper {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.4);
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+        margin: 10% auto;
+        padding: 20px;
+        border: none;
+        border-radius: 2.0rem;
+        width: 25%;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    
+        cursor: pointer;
+    }
+    
+    .modal-content form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-content form label {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        margin-right: 13rem;
+        margin-top: 3rem;
+    
+        color: var(--black);
+    }
+    
+    .modal-content form .input-name,
+    .modal-content form .input-email {
+        margin-bottom: 2rem;
+        font-size: 1.6rem;
+    
+        padding: 1rem;
+    
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        border: 2px solid #F2F2F2;
+        background-color: #F2F2F2;
+    
+        color: var(--black);
+        outline: none;
+    
+        transition: border-color 0.3s ease;
+    }
+    
+    .modal-content form .input-name:focus, 
+    .modal-content form .input-email:focus {
+        border-color: #6C63FF;
+        transition-delay: 0.1s;
+    }
+
+}
+
+

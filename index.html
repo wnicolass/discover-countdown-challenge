@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/top-image.svg" alt="top image">
+    <main id="#container">
+        <div class="col-a">
+            <div class="content">
+                <h1>READY TO LAUNCH IN...</h1>
+                <div class="counter">
+                    <div class="time">
+                        <span>Days</span>
+                        <span>Hours</span>
+                        <span>Minutes</span>
+                        <span>Seconds</span>
+                    </div>
+                    <div class="datetime">
+                        <span class="days">08</span>
+                        <span>:</span>
+                        <span class="hours">12</span>
+                        <span>:</span>
+                        <span class="minutes">44</span>
+                        <span>:</span>
+                        <span class="seconds">28</span>
+                    </div>
+                </div>
+                <p>Subcribe to learn more about the release</p>
+                <button id="openModal">Subscribe</button>
+            </div>
+        </div>
+        <div class="col-b">
+            <img id="main-image" src="./images/rocket.svg" alt="launching rocket image">
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal-wrapper invisible">
+        <div class="modal-content">
+                <span onclick="openAndCloseModal()" class="close">&times;</span>
+            <form action="#">
+                <label for="name">Name</label>
+                <input class="input-name" type="text" name="name" id="name" placeholder="" required>
+                <label for="email">Email</label>
+                <input class="input-email" type="email" name="email" id="email" placeholder="Enter your email" required>
+                <button onclick="openAndCloseModal()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="foot">
+        <img src="./images/bottom-image.svg" alt="bottom image">
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
